@@ -13,7 +13,7 @@ import string
 
 
 
-in_csv = 'test_data.csv'
+in_csv = 'train_data.csv'
 
 #get the number of lines of the csv file to be read
 
@@ -56,7 +56,7 @@ for i in range(1,number_lines,rowsize):
 
     #csv to write data to a new file with indexed name. input_1.csv etc.
 
-    out_csv = os.getcwd()+'\go\\train\\true\input' + str(i) + '.txt'
+    out_csv = os.getcwd()+'\\train\\true\input' + str(i) + '.txt'
     
    
     df2 = pd.DataFrame(df.loc[0:rowsize],columns=['id','title','text','label'])
