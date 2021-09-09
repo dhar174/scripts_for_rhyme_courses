@@ -1,0 +1,43 @@
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+vect = CountVectorizer()
+vect
+
+from nltk.tokenize import TreebankWordTokenizer
+tokenizer = TreebankWordTokenizer()
+vect.set_params(tokenizer=tokenizer.tokenize)
+
+# remove English stop words
+vect.set_params(stop_words='english')
+
+# include 1-grams and 2-grams
+vect.set_params(ngram_range=(1, 2))
+
+# ignore terms that appear in more than 50% of the documents
+vect.set_params(max_df=0.5)
+
+# only keep terms that appear in at least 2 documents
+vect.set_params(min_df=2)
+
+Another option is using TF-IDF scores. TF-IDF stands for Term Frequency — Inverse Document Frequency, and is a scoring measure generally used in information retrieval (IR) and summarization. TF-IDF scores relay the importance or relevancy of a specific term to the rest of the document.
+
+ters)
+from sklearn.feature_extraction.text import TfidfVectorizer
+vect = TfidfVectorizer()
+vect
+
+
+from nltk.tokenize import TreebankWordTokenizer
+tokenizer = TreebankWordTokenizer()
+vect.set_params(tokenizer=tokenizer.tokenize)
+
+# remove English stop words
+vect.set_params(stop_words='english')
+
+# include 1-grams and 2-grams
+vect.set_params(ngram_range=(1, 2))
+
+# ignore terms that appear in more than 50% of the documents
+vect.set_params(max_df=0.5)
+
+# only keep terms that appear in at least 2 documents
+vect.set_params(min_df=2)
